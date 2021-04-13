@@ -28,3 +28,9 @@ suites:
     src:
       - "tests/*.test.js"
     platformName: "mac 11.00"
+
+  - name: "Firefox"
+    browserName: "firefox"
+    src:
+      - "tests/*.test.js"
+    platformName: "Windows 10"

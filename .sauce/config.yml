@@ -25,36 +25,11 @@ suites:
     src:
       - "tests/*.test.js" # test files glob
     platformName: "mac 11.00" # Only relevant when running a test against the sauce cloud.
-  - name: "Firefox in docker"
-    mode: docker
-    browserName: "firefox"
-    src:
-      - "tests/*.test.js"
-  - name: "Firefox in sauce"
-    mode: sauce
-    browserName: "firefox"
-    src:
-      - "tests/*.test.js"
-    platformName: "Windows 10"
-  - name: iOS Test
-    mode: sauce
-    browserName: "safari"
-    src:
-      - "tests/*.test.js" # test files glob
-    devices:
-      - name: iPhone 12 Simulator
-        platformName: iOS
-        platformVersions:
-          - "14.3"
-      - name: iPad mini (5th generation) Simulator
-        platformName: iOS
-        platformVersions:
-          - "14.3"
 
 # Controls what artifacts to fetch when the suite on Sauce Cloud has finished.
 artifacts:
   download:
     when: always
     match:
-      - console.log
+      - "*.xml"
     directory: ./artifacts/
